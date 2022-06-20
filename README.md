@@ -1,3 +1,62 @@
+# README
+
+# Rock Paper Scissors - React Frontend
+
+## Overview
+
+This is the react frontend for a simple Rock Paper Scissors app.
+
+I used these docs for reference:
+https://reactjs.org/
+https://create-react-app.dev/
+
+Backend Repo: 
+https://github.com/Jess-White/rock-paper-scissors-rails-backend
+Frontend Repo:
+https://github.com/Jess-White/rock-paper-scissors-react-frontend
+
+The frontend is configured to run on http://localhost:3001
+(To double-check or change, check the scripts in the package.json file: scripts: "start": "PORT=3001 react-scripts start")
+The backend is configured to run on http://localhost:3000
+(To double-check or change, check cors.rb: origins 'localhost:3001')
+
+This app includes:
+--App.js
+--Components:
+    --GamePlayPrompt.js
+    --GameTypePrompt.js
+    --NoThanksMessage.js
+    --PlayerNamePrompt.js
+    --ResultsDisplay.js
+    --WelcomeMessage.js
+
+All components are imported into App.js and rendered conditionally using the GameDisplay function.
+There is no router; this is a one-page application.
+
+This app is built using functional components, useState, and useEffect.
+This is a good basic reference for react hooks:
+https://reactjs.org/docs/hooks-overview.html
+
+This app uses axios to make API requests:
+https://axios-http.com/
+All requests can be found in src/Services/PlayerService.js
+
+This app also uses react-query - react-query is designed to work with an HTTP client like axios:
+https://react-query.tanstack.com/
+
+react-query requires a QueryClientProvider to wrap the application. 
+In this app, the QueryClientProvider is in index.js
+
+react-query is separated into useQuery, which handles queries (index, show) and useMutation, which handles mutations (create, update, delete)
+This app uses useQuery for getPlayer(:id) and getPlayers
+This app also uses useMutation for createPlayer(newPlayerFields) and updatePlayer(:id, playerFields)
+
+These pages are a helpful reference for syntax:
+https://react-query.tanstack.com/guides/queries
+https://react-query.tanstack.com/guides/mutations
+
+## Installation
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -9,7 +68,7 @@ In the project directory, you can run:
 ### `yarn start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3001](http://localhost:3001) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
