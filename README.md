@@ -4,6 +4,8 @@
 
 ## Overview
 
+(ETA 6/22/2022: I noticed that players don't have to create a player before proceeding, and since player names are saved in state, there's nothing in the UX to flag that as required. If the player isn't created, then wins can't iterate, which breaks the game. I added a state hook for players saved and a conditional display to separate add player name from play game -> start game. If I had more time, I'd tie it to onSuccess for the create player mutation and populate player names from players data. It also probably makes sense to separate the player1 and player2 flows completely.)
+
 This is the react frontend for a simple Rock Paper Scissors app. 
 
 I used these docs for reference:
