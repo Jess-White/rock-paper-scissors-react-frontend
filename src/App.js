@@ -20,6 +20,13 @@ function App() {
   const [gameArgs, setGameArgs] = useState({ player1: null, player2: null });
   const [result, setResult] = useState("");
   const queryClient = useQueryClient();
+  const [playersSaved, setPlayersSaved] = useState(0);
+
+  useEffect(() => {
+    if (gameType === 1) {
+      setPlayersSaved(2);
+    }
+  });
 
   const ROCK_PAPER_SCISSORS = ["rock", "paper", "scissors"];
 
@@ -33,6 +40,7 @@ function App() {
       setPlayer2NameInput("");
       setGameArgs({ player1: null, player2: null });
       setResult("");
+      setPlayersSaved(0);
     }
   };
 
@@ -46,6 +54,7 @@ function App() {
       onSuccess: () => {
         console.log("Player created!");
         queryClient.invalidateQueries();
+        setPlayersSaved(playersSaved + 1);
       },
     }
   );
@@ -145,6 +154,7 @@ function App() {
           player2NameInput={player2NameInput}
           handleSubmitName={handleSubmitName}
           handleStartGame={handleStartGame}
+          playersSaved={playersSaved}
         />
       );
     } else if (display === "gamePlayPrompt") {

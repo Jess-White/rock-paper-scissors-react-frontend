@@ -10,7 +10,6 @@ export default function GamePlayPrompt({
   if (gameType === 1) {
     return (
       <>
-        <h1>Hi, {player1NameInput}!</h1>
         <h1>Please make a selection to play:</h1>
         <div>
           <button
@@ -37,7 +36,6 @@ export default function GamePlayPrompt({
   } else if (gameType === 2) {
     return (
       <>
-        <h1>Hi, {player1NameInput}!</h1>
         <h1>Please make a selection to play:</h1>
         <button
           value={gameArgs.player1}
@@ -57,7 +55,6 @@ export default function GamePlayPrompt({
         >
           Scissors
         </button>
-        <h1>Hi, {player2NameInput}!</h1>
         <h1>Please make a selection to play:</h1>
         <button
           value={gameArgs.player2}
